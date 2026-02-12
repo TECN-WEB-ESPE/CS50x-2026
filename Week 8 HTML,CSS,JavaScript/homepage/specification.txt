@@ -1,0 +1,4 @@
+HTML tags used (10+): nav, header, main, section, article, h1, h2, p, ul, li, a, button, img, figure, figcaption, form, label, input, textarea, footer.
+CSS properties used (5+): font-family, background, color, padding, margin, border-radius, box-shadow, display, gap.
+JavaScript description: I used JavaScript to rotate a quote on the homepage and to validate the contact form, showing feedback messages and input states.
+Bootstrap description: I used Bootstrap for the responsive navbar, grid layout, buttons, and cards to keep the layout clean on mobile and desktop.

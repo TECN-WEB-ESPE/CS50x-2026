@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const choiceButtons = document.querySelectorAll('[data-choice]');
+                const choiceFeedback = document.querySelector('#choice-feedback');
+
+                choiceButtons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        choiceButtons.forEach((btn) => {
+                            btn.classList.remove('correct', 'incorrect');
+                        });
+
+                        if (button.dataset.correct === 'true') {
+                            button.classList.add('correct');
+                            choiceFeedback.textContent = '¡Correcto!';
+                        } else {
+                            button.classList.add('incorrect');
+                            choiceFeedback.textContent = 'Incorrecto';
+                        }
+                    });
+                });
+
+                const freeInput = document.querySelector('#free-response');
+                const freeButton = document.querySelector('#free-submit');
+                const freeFeedback = document.querySelector('#free-feedback');
+                const freeAnswer = 'suiza';
+
+                freeButton.addEventListener('click', () => {
+                    const response = freeInput.value.trim().toLowerCase();
+                    freeInput.classList.remove('correct', 'incorrect');
+
+                    if (response === freeAnswer) {
+                        freeInput.classList.add('correct');
+                        freeFeedback.textContent = '¡Correcto!';
+                    } else {
+                        freeInput.classList.add('incorrect');
+                        freeFeedback.textContent = 'Incorrecto';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>¿Cual es la proporcion aproximada de personas por oveja en Nueva Zelanda?</h3>
+                <div class="choices">
+                    <button type="button" data-choice data-correct="false">6 personas por 1 oveja</button>
+                    <button type="button" data-choice data-correct="false">3 personas por 1 oveja</button>
+                    <button type="button" data-choice data-correct="false">1 persona por 1 oveja</button>
+                    <button type="button" data-choice data-correct="true">1 persona por 3 ovejas</button>
+                    <button type="button" data-choice data-correct="false">1 persona por 6 ovejas</button>
+                </div>
+                <p id="choice-feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>¿En que pais es ilegal tener solo un conejillo de Indias, ya que podria sentirse solo?</h3>
+                <input id="free-response" type="text" placeholder="Escribe tu respuesta" aria-label="Respuesta libre">
+                <button id="free-submit" type="button">Comprobar</button>
+                <p id="free-feedback"></p>
+            </div>
+        </div>
+    </body>
+</html>

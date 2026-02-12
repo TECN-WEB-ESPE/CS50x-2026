@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Contact</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Homepage</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre mi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header class="page-header">
+            <div class="container">
+                <h1>Contacto</h1>
+                <p class="lead">Escribeme una idea o un saludo rapido.</p>
+            </div>
+        </header>
+
+        <main class="container section-spacing">
+            <section class="row">
+                <div class="col-lg-7">
+                    <form id="contact-form" class="contact-card" novalidate>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control" id="name" type="text" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Tu mensaje"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                        <p id="status" class="status"></p>
+                    </form>
+                </div>
+                <div class="col-lg-5">
+                    <div class="note-card">
+                        <h2>Detalle rapido</h2>
+                        <p>Respondo mensajes cortos, claros y directos. Gracias por escribir.</p>
+                        <ul>
+                            <li>Correo: hola@example.com</li>
+                            <li>Ciudad: Asuncion</li>
+                            <li>Disponibilidad: tardes</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>Tu mensaje mantiene esta pagina activa.</p>
+            </div>
+        </footer>
+
+        <script>
+            const contactForm = document.querySelector('#contact-form');
+            const nameInput = document.querySelector('#name');
+            const messageInput = document.querySelector('#message');
+            const status = document.querySelector('#status');
+
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const nameValue = nameInput.value.trim();
+                const messageValue = messageInput.value.trim();
+
+                nameInput.classList.remove('input-error', 'input-success');
+                messageInput.classList.remove('input-error', 'input-success');
+
+                if (!nameValue || !messageValue) {
+                    status.textContent = 'Completa tu nombre y mensaje para continuar.';
+                    nameInput.classList.add('input-error');
+                    messageInput.classList.add('input-error');
+                    return;
+                }
+
+                status.textContent = 'Mensaje enviado. Gracias por escribir.';
+                nameInput.classList.add('input-success');
+                messageInput.classList.add('input-success');
+                contactForm.reset();
+            });
+        </script>
+    </body>
+</html>
