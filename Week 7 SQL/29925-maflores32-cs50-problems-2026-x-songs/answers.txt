@@ -1,0 +1,30 @@
+To characterize its audio aura, I would calculate the average
+energy, valence, and danceability of the 100 songs in songs.db.
+If the average values ​​are high (e.g., >0.7), the aura would be "energetic, positive, and danceable."
+If the energy is high but the valence is low, it would be "intense but melancholic."
+
+Query to calculate the aura:
+
+SELECT
+    ROUND(AVG(energy), 3) AS average_energy,
+    ROUND(AVG(valence), 3) AS average_valence,
+    ROUND(AVG(danceability), 3) AS average_danceability,
+    CASE
+        WHEN AVG(energy) > 0.7 AND AVG(valence) > 0.7 THEN 'Euphoric Aura: Energetic and Positive'
+        WHEN AVG(energy) > 0.7 AND AVG(valence) < 0.4 THEN 'Intense Aura: Energetic but Serious'
+        WHEN AVG(energy) < 0.4 AND AVG(valence) > 0.7 THEN 'Calm Aura: Relaxed and Joyful'
+        WHEN AVG(energy) < 0.4 AND AVG(valence) < 0.4 THEN 'Introspective Aura: Calm and Melancholic'
+        ELSE 'Balanced Aura: Mixed and Well-Rounded'
+    END AS aura_description
+FROM songs;
+
+Hypotheses:
+Averaging flattens differences: Opposing songs (e.g., energetic rock and a sad ballad) are averaged into a mean value that doesn't represent either.
+They all count the same: Without playback data, we don't know if some songs were listened to 100 times and others only 10.
+It ignores temporal patterns: Moods could have varied by month or hour, but we only have an annual average.
+
+Proposed improvements:
+
+Group by mood profile.
+Include artist data to see if one artist dominates the profile.
+Use percentiles to avoid distortion from extreme values.
