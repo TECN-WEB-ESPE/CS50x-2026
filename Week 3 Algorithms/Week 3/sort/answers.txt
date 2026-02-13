@@ -1,0 +1,15 @@
+sort1 uses: Selection Sort
+
+How do you know?: Comparing the times, this is the one who did the worst. In a general comparison, Selection will be the slowest when faced against Bubble and Merge, due to its quadratic and recursive nature, it will take a long time and
+a lot of operations to get to the point. With a runtime of 5.66s when sorting 50000 random numbers, it was the worst by far amongst the three.
+
+sort2 uses: Merge Sort
+
+How do you know?: Due to the logarithmic nature of its logic, you shall be able to run it 10 times, theoretically, before sort1 even finished its first one. It was the fastest amongst the three by an astounding difference.
+
+sort3 uses: Bubble Sort
+
+How do you know?: Because amongst the three it wasn't the fastest nor the slowest. In theory, it takes less operations than Selection to complete the sort yet, it still has minor optimizations.
+
+
+Conclusion: I ran the tests on both the three random and reversed arrangements, giving a negligible difference amongst the three programs so I just took the runtime for '50k random' as the comparison subject. Merge (sort2: 0.59) was the best by far, being 5x faster than Bubble (sort3: 2.25s), and 10x faster than Selection (sort1: 5.66s).
