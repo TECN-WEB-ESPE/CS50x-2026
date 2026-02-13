@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://cs50.harvard.edu/x/psets/6/ -->
+<html lang="en-us" class="wf-ptsans-n4-active wf-ptsans-n7-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <meta property="og:image" content="https://cs50.harvard.edu/x/2026/assets/sanders.jpg">
+
+        <meta property="og:title" content="Problem Set 6 - CS50x 2026">
+
+        <link href="https://cs50.harvard.edu/x/favicon.ico?1770323798" rel="icon">
+
+        <!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+        <script src="./Problem Set 6 - CS50x 2026_files/webfont.js.descarga"></script>
+
+        <!-- https://getbootstrap.com/docs/ -->
+        <script src="./Problem Set 6 - CS50x 2026_files/jquery.min.js.descarga"></script>
+        <script src="./Problem Set 6 - CS50x 2026_files/bootstrap.bundle.min.js.descarga"></script>
+
+        <!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+        <link href="./Problem Set 6 - CS50x 2026_files/bootstrap-table.min.css" rel="stylesheet">
+        <script src="./Problem Set 6 - CS50x 2026_files/bootstrap-table.min.js.descarga"></script>
+        <script src="./Problem Set 6 - CS50x 2026_files/bootstrap-table-mobile.min.js.descarga"></script>
+
+        <!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+        
+        <link crossorigin="anonymous" href="./Problem Set 6 - CS50x 2026_files/a6e66aa089.css" rel="stylesheet">
+        
+
+        <!-- https://moment.github.io/luxon/ -->
+        <script src="./Problem Set 6 - CS50x 2026_files/luxon.min.js.descarga"></script>
+
+        <!-- http://docs.mathjax.org/ -->
+        <!-- http://docs.mathjax.org/en/latest/options/output/chtml.html?highlight=displayAlign#the-configuration-block -->
+        <!-- https://docs.mathjax.org/en/latest/output/fonts.html -->
+        <script>
+            MathJax = {
+                loader: {
+                    paths: {
+                        'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+                    }
+                },
+                output: {
+                    displayAlign: 'left'
+                }
+            };
+        </script>
+        <script src="./Problem Set 6 - CS50x 2026_files/tex-mml-chtml.js.descarga"></script><style id="MJX-bE-styles">:root {
+  --mjx-fg-red: 255, 0, 0;
+  --mjx-fg-green: 0, 255, 0;
+  --mjx-fg-blue: 0, 0, 255;
+  --mjx-fg-yellow: 255, 255, 0;
+  --mjx-fg-cyan: 0, 255, 255;
+  --mjx-fg-magenta: 255, 0, 255;
+  --mjx-fg-white: 255, 255, 255;
+  --mjx-fg-black: 0, 0, 0;
+  --mjx-bg-red: 255, 0, 0;
+  --mjx-bg-green: 0, 255, 0;
+  --mjx-bg-blue: 0, 0, 255;
+  --mjx-bg-yellow: 255, 255, 0;
+  --mjx-bg-cyan: 0, 255, 255;
+  --mjx-bg-magenta: 255, 0, 255;
+  --mjx-bg-white: 255, 255, 255;
+  --mjx-bg-black: 0, 0, 0;
+  --mjx-live-bg-color: white;
+  --mjx-live-shadow-color: #888;
+  --mjx-live-border-color: #CCCCCC;
+  --mjx-bg1-color: rgba(var(--mjx-bg-blue), var(--mjx-bg-alpha));
+  --mjx-fg1-color: rgba(var(--mjx-fg-black), 1);
+  --mjx-bg2-color: rgba(var(--mjx-bg-red), 1);
+  --mjx-fg2-color: rgba(var(--mjx-fg-black), 1);
+  --mjx-bg1-alpha: 0.2;
+  --mjx-fg1-alpha: 1;
+  --mjx-bg2-alpha: 1;
+  --mjx-fg2-alpha: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mjx-bg-blue: 132, 132, 255;
+      --mjx-bg-white: 0, 0, 0;
+      --mjx-bg-black: 255, 255, 255;
+      --mjx-fg-white: 0, 0, 0;
+      --mjx-fg-black: 255, 255, 255;
+      --mjx-live-bg-color: #222025;
+      --mjx-live-shadow-color: black;
+      --mjx-live-border-color: #7C7C7C;
+      --mjx-bg1-alpha: 0.3;
+      --mjx-fg1-alpha: 1;
+      --mjx-bg2-alpha: 1;
+      --mjx-fg2-alpha: 1;
+  }
+}
+
+.MJX_LiveRegion {
+  position: absolute;
+  top: 0;
+  display: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+  opacity: 1;
+  z-index: 202;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: var(--mjx-live-bg-color);
+  box-shadow: 0px 5px 20px var(--mjx-live-shadow-color);
+  border: 2px solid var(--mjx-live-border-color);
+}
+
+.MJX_LiveRegion_Show {
+  display: block;
+}
+
+.MJX_LiveRegion > div {
+  color: var(--mjx-fg1-color);
+  background-color: var(--mjx-bg1-color);
+}
+
+mjx-container [data-sre-highlight-1]:not([data-mjx-collapsed], rect) {
+  color: var(--mjx-fg1-color) ! important;
+  fill: var(--mjx-fg1-color) ! important;
+}
+
+mjx-container:not([data-mjx-clone-container]) [data-sre-highlight-1]:not([data-sre-enclosed], rect) {
+  background-color: var(--mjx-bg1-color) ! important;
+}
+
+mjx-container rect[data-sre-highlight-1]:not([data-sre-enclosed]) {
+  fill: var(--mjx-bg1-color) ! important;
+}
+
+mjx-container [data-sre-highlight-2] {
+  color: var(--mjx-fg2-color) ! important;
+  background-color: var(--mjx-bg2-color) ! important;
+  fill: var(--mjx-fg2-color) ! important;
+}
+
+mjx-container rect[data-sre-highlight-2] {
+  fill: var(--mjx-bg2-color) ! important;
+}</style><style id="MJX-xE-styles">.MJX_HoverRegion {
+  display: block;
+  position: absolute;
+  width: max-content;
+  height: auto;
+  padding: 0;
+  opacity: 1;
+  z-index: 202;
+  margin: 0 auto;
+  background-color: white;
+  line-height: 0;
+  box-shadow: 0px 10px 20px #888;
+  border: 2px solid #CCCCCC;
+}
+
+.MJX_HoverRegion > div {
+  overflow: hidden;
+  color: var(--mjx-fg1-color);
+  background-color: var(--mjx-bg1-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  .MJX_HoverRegion {
+    background-color: #222025;
+      box-shadow: 0px 5px 20px #000;
+      border: 1px solid #7C7C7C;
+  }
+}
+
+mjx-container[data-mjx-clone-container] {
+  padding: 2px ! important;
+}
+
+mjx-math > mjx-mlabeledtr {
+  display: inline-block;
+  margin-right: .5em ! important;
+}
+
+mjx-math > mjx-mtd {
+  float: right;
+}</style><style id="MJX-gE-styles">.MJX_ToolTip {
+  width: auto;
+  height: auto;
+  opacity: 1;
+  text-align: center;
+  border-radius: 4px;
+  padding: 0;
+  border-bottom: 1px dotted black;
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+  z-index: 202;
+}
+
+.MJX_ToolTip > div {
+  border-radius: inherit;
+  padding: 0 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .MJX_ToolTip {
+    background-color: #222025;
+      box-shadow: 0px 5px 20px #000;
+      border: 1px solid #7C7C7C;
+  }
+}</style><style id="MJX-Menu-styles">.CtxtMenu_Menu {
+  position: absolute;
+  background-color: white;
+  color: black;
+  width: auto;
+  padding: 5px 0px;
+  border: 1px solid #CCCCCC;
+  margin: 0;
+  cursor: default;
+  font: menu;
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+  line-height: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  float: none;
+  z-index: 1001;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px #808080;
+}
+.CtxtMenu_MenuItem {
+  padding: 1px 2em;
+  background: transparent;
+}
+.CtxtMenu_MenuArrow {
+  position: absolute;
+  right: 0.5em;
+  padding-top: 0.25em;
+  color: #666666;
+  font-family: null;
+  font-size: 0.75em;
+}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {
+  color: white;
+}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {
+  left: 0.5em;
+  right: auto;
+}
+.CtxtMenu_MenuCheck {
+  position: absolute;
+  left: 0.7em;
+  font-family: null;
+}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL {
+  right: 0.7em;
+  left: auto;
+}
+.CtxtMenu_MenuRadioCheck {
+  position: absolute;
+  left: 0.7em;
+}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {
+  right: 0.7em;
+  left: auto;
+}
+.CtxtMenu_MenuInputBox {
+  padding-left: 1em;
+  right: 0.5em;
+  color: #666666;
+  font-family: null;
+}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {
+  left: 0.1em;
+}
+.CtxtMenu_MenuComboBox {
+  left: 0.1em;
+  padding-bottom: 0.5em;
+}
+.CtxtMenu_MenuSlider {
+  left: 0.1em;
+}
+.CtxtMenu_SliderValue {
+  position: absolute;
+  right: 0.1em;
+  padding-top: 0.25em;
+  color: #333333;
+  font-size: 0.75em;
+}
+.CtxtMenu_MenuActive .CtxtMenu_SliderValue {
+  color: #DDDDDD;
+}
+.CtxtMenu_SliderBar {
+  outline: none;
+  background: #D3D3D3;
+}
+.CtxtMenu_MenuLabel {
+  padding: 1px 2em 3px 1.33em;
+  font-style: italic;
+}
+.CtxtMenu_MenuRule {
+  border-top: 1px solid #DDDDDD;
+  margin: 4px 3px;
+}
+.CtxtMenu_MenuDisabled {
+  color: #999;
+}
+.CtxtMenu_MenuActive {
+  background-color: #606872;
+  color: white;
+}
+.CtxtMenu_MenuDisabled:focus {
+  background-color: #E8E8E8;
+}
+.CtxtMenu_MenuLabel:focus {
+  background-color: #E8E8E8;
+}
+.CtxtMenu_ContextMenu:focus {
+  outline: none;
+}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {
+  outline: none;
+}
+.CtxtMenu_SelectionMenu {
+  position: relative;
+  float: left;
+  border-bottom: none;
+  box-shadow: none ! important;
+  border-radius: 0px !important;
+}
+.CtxtMenu_SelectionItem {
+  padding-right: 1em;
+}
+.CtxtMenu_Selection {
+  right: 40%;
+  width: 50%;
+}
+.CtxtMenu_SelectionBox {
+  padding: 0em;
+  max-height: 20em;
+  max-width: none;
+  background-color: #FFFFFF;
+}
+.CtxtMenu_SelectionDivider {
+  clear: both;
+  border-top: 2px solid #000000;
+}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {
+  top: -10px;
+  left: -10px;
+}
+@media (prefers-color-scheme: dark) /* menu */ {
+  .CtxtMenu_Menu {
+  color: #E0E0E0;
+  background-color: #242436;
+  box-shadow: 0px 10px 20px #000;
+  border: 1px solid #808080;
+}
+  .CtxtMenu_SliderValue {
+  color: #D0D0D0;
+}
+  .CtxtMenu_MenuDisabled:focus {
+  background-color: #383838;
+}
+  .CtxtMenu_MenuLabel:focus {
+  background-color: #585858;
+}
+  .CtxtMenu_MenuRule {
+  border-top: 1px solid #808080;
+}
+  .CtxtMenu_SelectionDivider {
+  border-top: 2px solid #808080;
+};
+}
+.CtxtMenu_MenuClose {
+  position: absolute;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid #AAA;
+  border-radius: 18px;
+  font-family:  "Courier New", Courier;
+  font-size: 24px;
+  color: #F0F0F0;
+}
+.CtxtMenu_MenuClose span {
+  display: block;
+  background-color: #AAA;
+  border: 1.5px solid;
+  border-radius: 18px;
+  line-height: 0;
+  padding: 8px 0 6px;
+}
+.CtxtMenu_MenuClose:hover {
+  color: white !important;
+  border: 2px solid #CCC !important;
+}
+.CtxtMenu_MenuClose:hover span {
+  background-color: #CCC !important;
+}
+.CtxtMenu_MenuClose:hover:focus {
+  outline: none;
+}</style>
+
+        <!-- https://github.com/verlok/vanilla-lazyload -->
+        <script src="./Problem Set 6 - CS50x 2026_files/lazyload.min.js.descarga"></script>
+
+        <!-- https://iframe-resizer.com/ -->
+        <script src="./Problem Set 6 - CS50x 2026_files/index.umd.js.descarga"></script>
+
+        <!-- https://github.com/scratchblocks/scratchblocks/releases -->
+        <script src="./Problem Set 6 - CS50x 2026_files/scratchblocks.min.js.descarga"></script><style>.sb-label{font-family:Lucida Grande,Verdana,Arial,DejaVu Sans,sans-serif;font-weight:700;fill:#fff;font-size:10px;word-spacing:1px}.sb-obsolete{fill:#d42828}.sb-motion{fill:#4a6cd4}.sb-looks{fill:#8a55d7}.sb-sound{fill:#bb42c3}.sb-pen{fill:#0e9a6c}.sb-events{fill:#c88330}.sb-control{fill:#e1a91a}.sb-sensing{fill:#2ca5e2}.sb-operators{fill:#5cb712}.sb-variables{fill:#ee7d16}.sb-list{fill:#cc5b22}.sb-custom{fill:#632d99}.sb-custom-arg{fill:#5947b1}.sb-extension{fill:#4b4a60}.sb-grey{fill:#969696}.sb-bevel{filter:url(#bevelFilter)}.sb-input{filter:url(#inputBevelFilter)}.sb-input-number,.sb-input-number-dropdown,.sb-input-string{fill:#fff}.sb-literal-dropdown,.sb-literal-number,.sb-literal-number-dropdown,.sb-literal-string{font-weight:400;font-size:9px;word-spacing:0}.sb-literal-number,.sb-literal-number-dropdown,.sb-literal-string{fill:#000}.sb-darker{filter:url(#inputDarkFilter)}.sb-outline{stroke:#fff;stroke-opacity:.2;stroke-width:2;fill:none}.sb-comment,.sb-define-hat-cap{stroke:#632d99;stroke-width:1;fill:#8e2ec2}.sb-comment{fill:#ffffa5;stroke:#d0d1d2}.sb-comment-line{fill:#ffff80}.sb-comment-label{font-family:Helvetica,Arial,DejaVu Sans,sans-serif;font-weight:700;fill:#5c5d5f;word-spacing:0;font-size:12px}.sb-diff{fill:none;stroke:#000}.sb-diff-ins{stroke-width:2px}.sb-diff-del{stroke-width:3px}</style><style>.sb3-label{font:500 12pt Helvetica Neue,Helvetica,sans-serif;word-spacing:1pt}.sb3-literal-dropdown,.sb3-literal-number,.sb3-literal-number-dropdown,.sb3-literal-string{word-spacing:0}.sb3-diff{fill:none;stroke:#000}.sb3-diff-ins{stroke-width:2px}.sb3-diff-del{stroke-width:3px}svg .sb3-motion{fill:#4c97ff;stroke:#3373cc}svg .sb3-motion-alt{fill:#4280d7}svg .sb3-motion-dark{fill:#3373cc}svg .sb3-looks{fill:#96f;stroke:#774dcb}svg .sb3-looks-alt{fill:#855cd6}svg .sb3-looks-dark{fill:#774dcb}svg .sb3-sound{fill:#cf63cf;stroke:#bd42bd}svg .sb3-sound-alt{fill:#c94fc9}svg .sb3-sound-dark{fill:#bd42bd}svg .sb3-control{fill:#ffab19;stroke:#cf8b17}svg .sb3-control-alt{fill:#ec9c13}svg .sb3-control-dark{fill:#cf8b17}svg .sb3-events{fill:#ffbf00;stroke:#c90}svg .sb3-events-alt{fill:#e6ac00}svg .sb3-events-dark{fill:#c90}svg .sb3-sensing{fill:#5cb1d6;stroke:#2e8eb8}svg .sb3-sensing-alt{fill:#47a8d1}svg .sb3-sensing-dark{fill:#2e8eb8}svg .sb3-operators{fill:#59c059;stroke:#389438}svg .sb3-operators-alt{fill:#46b946}svg .sb3-operators-dark{fill:#389438}svg .sb3-variables{fill:#ff8c1a;stroke:#db6e00}svg .sb3-variables-alt{fill:#ff8000}svg .sb3-variables-dark{fill:#db6e00}svg .sb3-list{fill:#ff661a;stroke:#e64d00}svg .sb3-list-alt{fill:#f50}svg .sb3-list-dark{fill:#e64d00}svg .sb3-custom{fill:#ff6680;stroke:#f35}svg .sb3-custom-alt{fill:#ff4d6a}svg .sb3-custom-dark{fill:#f35}svg .sb3-extension{fill:#0fbd8c;stroke:#0b8e69}svg .sb3-extension-alt{fill:#0da57a}svg .sb3-extension-dark{fill:#0b8e69}svg .sb3-obsolete{fill:#ed4242;stroke:#ca2b2b}svg .sb3-obsolete-alt{fill:#db3333}svg .sb3-obsolete-dark{fill:#ca2b2b}svg .sb3-grey{fill:#bfbfbf;stroke:#909090}svg .sb3-grey-alt{fill:#b2b2b2}svg .sb3-grey-dark{fill:#909090}svg .sb3-label{fill:#fff}svg .sb3-input-color{stroke:#fff}svg .sb3-input-number,svg .sb3-input-string{fill:#fff}svg .sb3-literal-number,svg .sb3-literal-string{fill:#575e75}svg .sb3-custom-arg{fill:#ff6680;stroke:#f35}svg.scratchblocks-style-scratch3-high-contrast .sb3-motion{fill:#80b5ff;stroke:#3373cc}svg.scratchblocks-style-scratch3-high-contrast .sb3-motion-alt{fill:#b3d2ff}svg.scratchblocks-style-scratch3-high-contrast .sb3-motion-dark{fill:#3373cc}svg.scratchblocks-style-scratch3-high-contrast .sb3-looks{fill:#ccb3ff;stroke:#774dcb}svg.scratchblocks-style-scratch3-high-contrast .sb3-looks-alt{fill:#dcf}svg.scratchblocks-style-scratch3-high-contrast .sb3-looks-dark{fill:#774dcb}svg.scratchblocks-style-scratch3-high-contrast .sb3-sound{fill:#e19de1;stroke:#bd42bd}svg.scratchblocks-style-scratch3-high-contrast .sb3-sound-alt{fill:#ffb3ff}svg.scratchblocks-style-scratch3-high-contrast .sb3-sound-dark{fill:#bd42bd}svg.scratchblocks-style-scratch3-high-contrast .sb3-control{fill:#ffbe4c;stroke:#cf8b17}svg.scratchblocks-style-scratch3-high-contrast .sb3-control-alt{fill:#ffda99}svg.scratchblocks-style-scratch3-high-contrast .sb3-control-dark{fill:#cf8b17}svg.scratchblocks-style-scratch3-high-contrast .sb3-events{fill:#ffd966;stroke:#c90}svg.scratchblocks-style-scratch3-high-contrast .sb3-events-alt{fill:#ffecb3}svg.scratchblocks-style-scratch3-high-contrast .sb3-events-dark{fill:#c90}svg.scratchblocks-style-scratch3-high-contrast .sb3-sensing{fill:#85c4e0;stroke:#2e8eb8}svg.scratchblocks-style-scratch3-high-contrast .sb3-sensing-alt{fill:#aed8ea}svg.scratchblocks-style-scratch3-high-contrast .sb3-sensing-dark{fill:#2e8eb8}svg.scratchblocks-style-scratch3-high-contrast .sb3-operators{fill:#7ece7e;stroke:#389438}svg.scratchblocks-style-scratch3-high-contrast .sb3-operators-alt{fill:#b5e3b5}svg.scratchblocks-style-scratch3-high-contrast .sb3-operators-dark{fill:#389438}svg.scratchblocks-style-scratch3-high-contrast .sb3-variables{fill:#ffa54c;stroke:#db6e00}svg.scratchblocks-style-scratch3-high-contrast .sb3-variables-alt{fill:#fc9}svg.scratchblocks-style-scratch3-high-contrast .sb3-variables-dark{fill:#db6e00}svg.scratchblocks-style-scratch3-high-contrast .sb3-list{fill:#f96;stroke:#e64d00}svg.scratchblocks-style-scratch3-high-contrast .sb3-list-alt{fill:#ffcab0}svg.scratchblocks-style-scratch3-high-contrast .sb3-list-dark{fill:#e64d00}svg.scratchblocks-style-scratch3-high-contrast .sb3-custom{fill:#f9a;stroke:#e64d00}svg.scratchblocks-style-scratch3-high-contrast .sb3-custom-alt{fill:#ffccd5}svg.scratchblocks-style-scratch3-high-contrast .sb3-custom-dark{fill:#e64d00}svg.scratchblocks-style-scratch3-high-contrast .sb3-extension{fill:#13ecaf;stroke:#0b8e69}svg.scratchblocks-style-scratch3-high-contrast .sb3-extension-alt{fill:#75f0cd}svg.scratchblocks-style-scratch3-high-contrast .sb3-extension-dark{fill:#0b8e69}svg.scratchblocks-style-scratch3-high-contrast .sb3-obsolete{fill:#fc6666;stroke:#d32121}svg.scratchblocks-style-scratch3-high-contrast .sb3-obsolete-alt{fill:#fcb0b0}svg.scratchblocks-style-scratch3-high-contrast .sb3-obsolete-dark{fill:#d32121}svg.scratchblocks-style-scratch3-high-contrast .sb3-grey{fill:#bfbfbf;stroke:#959595}svg.scratchblocks-style-scratch3-high-contrast .sb3-grey-alt{fill:#b2b2b2}svg.scratchblocks-style-scratch3-high-contrast .sb3-grey-dark{fill:#959595}svg.scratchblocks-style-scratch3-high-contrast .sb3-label{fill:#000}svg.scratchblocks-style-scratch3-high-contrast .sb3-input-color{stroke:#fff}svg.scratchblocks-style-scratch3-high-contrast .sb3-input-number,svg.scratchblocks-style-scratch3-high-contrast .sb3-input-string{fill:#fff}svg.scratchblocks-style-scratch3-high-contrast .sb3-literal-number,svg.scratchblocks-style-scratch3-high-contrast .sb3-literal-string{fill:#000}svg.scratchblocks-style-scratch3-high-contrast .sb3-custom-arg{fill:#f9a;stroke:#e64d00}.sb3-comment{fill:#ffffa5;stroke:#d0d1d2;stroke-width:1}.sb3-comment-line{fill:#ffff80}.sb3-comment-label,.sb3-label.sb3-comment-label{font:400 12pt Helvetica Neue,Helvetica,sans-serif;fill:#000;word-spacing:0}</style>
+
+        <!-- https://mermaid-js.github.io/ -->
+        <script src="./Problem Set 6 - CS50x 2026_files/mermaid.min.js.descarga"></script>
+
+        <!-- https://github.com/twitter/twemoji -->
+        <script src="./Problem Set 6 - CS50x 2026_files/twemoji.min.js.descarga"></script>
+
+        
+
+        <link href="./Problem Set 6 - CS50x 2026_files/page.css" rel="stylesheet">
+        <link rel="stylesheet" href="./Problem Set 6 - CS50x 2026_files/css" media="all"><script src="./Problem Set 6 - CS50x 2026_files/jekyll-theme-cs50.js.descarga"></script>
+
+        <script>
+            window.CS50 = {
+                local: {"day":"numeric","hour":"numeric","minute":"numeric","month":"long","timeZoneName":"short","weekday":"long","year":"numeric"},
+                locale: "en",
+                tz: "Etc/Zulu"
+            };
+        </script>
+
+        <title>Problem Set 6 - CS50x 2026</title>
+
+
+    <meta property="og:description" content="Collaboration on problem sets is not permitted except to the extent that you may ask classmates and others for help so long as that help does not reduce to...">
+<style id="MJX-CHTML-styles">
+mjx-container[overflow="scroll"][display] {
+  overflow: auto clip;
+  min-width: initial !important;
+}
+
+mjx-container[overflow="truncate"][display] {
+  overflow: hidden clip;
+  min-width: initial !important;
+}
+
+mjx-container[display] {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  margin: .7em 0;
+  padding: .3em 2px;
+}
+
+mjx-container[display][width="full"] {
+  display: flex;
+}
+
+mjx-container[justify="left"] {
+  text-align: left;
+  justify-content: left;
+}
+
+mjx-container[justify="right"] {
+  text-align: right;
+  justify-content: right;
+}
+
+mjx-container[jax="CHTML"] {
+  white-space: nowrap;
+}
+
+mjx-mo > mjx-c, mjx-mi > mjx-c, mjx-mn > mjx-c, mjx-ms > mjx-c, mjx-mtext > mjx-c {
+  clip-path: padding-box polygon(-1em -2px, calc(100% + 1em) -2px, calc(100% + 1em) calc(100% + 2px), -1em calc(100% + 2px));
+}
+
+mjx-stretchy-h {
+  clip-path: padding-box polygon(0 -2px, 100% -2px, 100% calc(100% + 2px), 0 calc(100% + 2px));
+}
+
+mjx-stretchy-v {
+  clip-path: padding-box polygon(-2px 0, calc(100% + 2px) 0, calc(100% + 2px) 100%, -2px 100%);
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > mjx-cell, mjx-row > mjx-base, mjx-row > mjx-under, mjx-row > mjx-over, mjx-row > mjx-den {
+  display: table-cell;
+}
+
+mjx-container [inline-breaks] {
+  display: inline;
+}
+
+mjx-container .mjx-selected {
+  outline: 2px solid black;
+}
+
+@media (prefers-color-scheme: dark) {
+  mjx-container .mjx-selected {
+    outline: 2px solid #C8C8C8;
+  }
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+mjx-container[has-speech="true"] {
+  position: relative;
+  cursor: default;
+}
+
+mjx-speech {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+mjx-speech:focus {
+  outline: none;
+}
+
+mjx-container a[data-mjx-href] {
+  color: LinkText;
+  cursor: pointer;
+}
+
+mjx-container a[data-mjx-href].mjx-visited {
+  color: VisitedText;
+}
+
+mjx-container > mjx-help {
+  display: none;
+  position: absolute;
+  top: -.3em;
+  right: -.5em;
+  width: .6em;
+  height: .6em;
+  cursor: pointer;
+}
+
+mjx-container[display="true"] > mjx-help {
+  position: sticky;
+  inset: -100% 0 100% 0;
+  margin: -.3em -.5em 0 -.1em;
+  right: 0;
+  top: initial;
+}
+
+mjx-help > svg {
+  stroke: black;
+  width: 100%;
+  height: 100%;
+}
+
+mjx-help > svg > circle {
+  stroke-width: 1.5px;
+  cx: 9px;
+  cy: 9px;
+  r: 9px;
+  fill: white;
+}
+
+mjx-help > svg > circle:nth-child(2) {
+  fill: var(--mjx-bg1-color);
+  r: 7px;
+}
+
+mjx-help > svg > line {
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+}
+
+mjx-help:hover > svg > circle:nth-child(2) {
+  fill: white;
+}
+
+mjx-container.mjx-explorer-active > mjx-help {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) /* explorer */ {
+  mjx-help > svg {
+    stroke: #E0E0E0;
+  }
+  mjx-help > svg > circle {
+    fill: #404040;
+  }
+  mjx-help > svg > circle:nth-child(2) {
+    fill: rgba(132, 132, 255, .3);
+  }
+  mjx-help:hover > svg > circle:nth-child(2) {
+    stroke: #AAAAAA;
+      fill: #404040;
+  }
+}
+
+mjx-container[jax="CHTML"] > mjx-math.NCM-N[breakable] > * {
+  font-family: MJX-NCM-ZERO, MJX-NCM-N;
+}
+
+.NCM-N {
+  font-family: MJX-NCM-ZERO, MJX-NCM-N;
+}
+
+.NCM-B {
+  font-family: MJX-NCM-ZERO, MJX-NCM-B;
+}
+
+.NCM-I {
+  font-family: MJX-NCM-ZERO, MJX-NCM-I;
+}
+
+.NCM-BI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-BI;
+}
+
+.NCM-DS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-DS;
+}
+
+.NCM-F {
+  font-family: MJX-NCM-ZERO, MJX-NCM-F;
+}
+
+.NCM-FB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-FB;
+}
+
+.NCM-SS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SS;
+}
+
+.NCM-SSB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSB;
+}
+
+.NCM-SSI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSI;
+}
+
+.NCM-SSBI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSBI;
+}
+
+.NCM-M {
+  font-family: MJX-NCM-ZERO, MJX-NCM-M;
+}
+
+.NCM-SO {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SO;
+}
+
+.NCM-LO {
+  font-family: MJX-NCM-ZERO, MJX-NCM-LO;
+}
+
+.NCM-S3 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S3;
+}
+
+.NCM-S4 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S4;
+}
+
+.NCM-S5 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S5;
+}
+
+.NCM-S6 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S6;
+}
+
+.NCM-S7 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S7;
+}
+
+.NCM-MI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-MI;
+}
+
+.NCM-C {
+  font-family: MJX-NCM-ZERO, MJX-NCM-C;
+}
+
+.NCM-CB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-CB;
+}
+
+.NCM-OS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-OS;
+}
+
+.NCM-OB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-OB;
+}
+
+.NCM-V {
+  font-family: MJX-NCM-ZERO, MJX-NCM-V;
+}
+
+.NCM-LT {
+  font-family: MJX-NCM-ZERO, MJX-NCM-LT;
+}
+
+.NCM-RB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-RB;
+}
+
+.NCM-EM {
+  font-family: MJX-NCM-ZERO, MJX-NCM-EM;
+}
+
+.NCM-B-a {
+  font-family: MJX-NCM-ZERO, MJX-NCM-B-a;
+}
+
+.NCM-U {
+  font-family: MJX-NCM-ZERO, MJX-NCM-U;
+}
+
+.NCM-U-a {
+  font-family: MJX-NCM-ZERO, MJX-NCM-U-a;
+}
+
+.NCM-S {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S;
+}
+
+.NCM-SB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SB;
+}
+
+@font-face /* MJX-NCM-ZERO */ {
+  font-family: MJX-NCM-ZERO;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-zero.woff2") format("woff2");
+}
+
+@font-face /* MJX-BRK */ {
+  font-family: MJX-BRK;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-brk.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-N */ {
+  font-family: MJX-NCM-N;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-n.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-B */ {
+  font-family: MJX-NCM-B;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-b.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-I */ {
+  font-family: MJX-NCM-I;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-i.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-BI */ {
+  font-family: MJX-NCM-BI;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-bi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-DS */ {
+  font-family: MJX-NCM-DS;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ds.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-F */ {
+  font-family: MJX-NCM-F;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-f.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-FB */ {
+  font-family: MJX-NCM-FB;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-fb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SS */ {
+  font-family: MJX-NCM-SS;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ss.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSB */ {
+  font-family: MJX-NCM-SSB;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSI */ {
+  font-family: MJX-NCM-SSI;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSBI */ {
+  font-family: MJX-NCM-SSBI;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssbi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-M */ {
+  font-family: MJX-NCM-M;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-m.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SO */ {
+  font-family: MJX-NCM-SO;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-so.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-LO */ {
+  font-family: MJX-NCM-LO;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-lo.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S3 */ {
+  font-family: MJX-NCM-S3;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s3.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S4 */ {
+  font-family: MJX-NCM-S4;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s4.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S5 */ {
+  font-family: MJX-NCM-S5;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s5.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S6 */ {
+  font-family: MJX-NCM-S6;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s6.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S7 */ {
+  font-family: MJX-NCM-S7;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s7.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-MI */ {
+  font-family: MJX-NCM-MI;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-mi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-C */ {
+  font-family: MJX-NCM-C;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-c.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-CB */ {
+  font-family: MJX-NCM-CB;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-cb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-OS */ {
+  font-family: MJX-NCM-OS;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-os.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-OB */ {
+  font-family: MJX-NCM-OB;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ob.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-V */ {
+  font-family: MJX-NCM-V;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-v.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-LT */ {
+  font-family: MJX-NCM-LT;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-lt.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-RB */ {
+  font-family: MJX-NCM-RB;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-rb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-EM */ {
+  font-family: MJX-NCM-EM;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-em.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-B-a */ {
+  font-family: MJX-NCM-B-a;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-b-a.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-U */ {
+  font-family: MJX-NCM-U;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-u.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-U-a */ {
+  font-family: MJX-NCM-U-a;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-u-a.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S */ {
+  font-family: MJX-NCM-S;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SB */ {
+  font-family: MJX-NCM-SB;
+  src: url("https://cs50.harvard.edu/x/assets/mathjax/../@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-sb.woff2") format("woff2");
+}
+</style></head>
+
+    <body class="">
+
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-lg" style="height: 599px; top: 0px;">
+ 
+                    <header><h1 data-id="this-is-cs50"><a href="https://cs50.harvard.edu/x/">This is CS50</a></h1>
+
+<h2 class="text-white" data-id="cs50s-introduction-to-computer-science">CS50’s Introduction to Computer Science</h2>
+
+<p>OpenCourseWare</p>
+
+<p><a class="pr-1 small" href="https://cs50.harvard.edu/donate">Donate<i aria-hidden="true" class="fas fa-external-link-alt ps-2"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a>
+<br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a>
+<br>
+<a class="mr-1" href="https://www.facebook.com/dmalan"><i aria-hidden="true" class="fa-brands fa-facebook-f" title="Facebook"></i><span class="sr-only">Facebook</span></a>
+<a class="mr-1" href="https://github.com/dmalan"><i aria-hidden="true" class="fa-brands fa-github" title="GitHub"></i><span class="sr-only">GitHub</span></a>
+<a class="mr-1" href="https://www.instagram.com/davidjmalan/"><i aria-hidden="true" class="fa-brands fa-instagram" title="Instagram"></i><span class="sr-only">Instagram</span></a>
+<a class="mr-1" href="https://www.linkedin.com/in/malan/"><i aria-hidden="true" class="fa-brands fa-linkedin" title="LinkedIn"></i><span class="sr-only">LinkedIn</span></a>
+<a class="mr-1" href="https://www.reddit.com/user/davidjmalan"><i aria-hidden="true" class="fa-brands fa-reddit-alien" title="Reddit"></i><span class="sr-only">Reddit</span></a>
+<a class="mr-1" href="https://www.threads.net/@davidjmalan"><i aria-hidden="true" class="fa-brands fa-threads" title="Threads"></i><span class="sr-only">Threads</span></a>
+<a class="mr-1" href="https://twitter.com/davidjmalan"><i aria-hidden="true" class="fa-brands fa-twitter" title="Twitter"></i><span class="sr-only">Twitter</span></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-lg-none" data-bs-target="aside &gt; nav" data-bs-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-lg-block" id="nav"><hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/zoom/"><i class="fa-solid fa-video me-2"></i>Zoom Meetings</a></li>
+</ul>
+
+<!-- Tools -->
+<hr class="small">
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.ai/"><i class="fa-solid fa-duck pe-2 text-decoration-none"></i>CS50.ai</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.edx.org/ed"><i class="fa-solid fa-comment-question pe-2 text-decoration-none"></i>Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.dev/"><i class="fa-solid fa-laptop pe-2 text-decoration-none"></i>Visual Studio Code</a></li>
+</ul>
+
+<!-- Highlights -->
+<hr>
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/workshop/">CS50 Educator Workshop</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/gallery/">Gallery of Final Projects<span aria-hidden="true" class="ps-2 text-decoration-none"><img draggable="false" class="emoji" alt="🖼️" src="./Problem Set 6 - CS50x 2026_files/1f5bc.png"> </span></a></li>
+</ul>
+
+<!-- Course Nav -->
+<hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/0/">Week 0</a> Scratch</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/1/">Week 1</a> C</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/2/">Week 2</a> Arrays</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/3/">Week 3</a> Algorithms</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/4/">Week 4</a> Memory</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/5/">Week 5</a> Data Structures</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/6/">Week 6</a> Python</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/7/">Week 7</a> SQL</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/weeks/ai/" class="small">Artificial Intelligence</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/8/">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/9/">Week 9</a> Flask</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/weeks/10/">Week 10</a> The End</li>
+</ul>
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/practice/"><i class="fa-solid fa-rocket pe-2 text-decoration-none"></i>Additional Practice</a></li>
+</ul>
+
+<hr>
+
+<!-- Final project spec, seminars, shorts -->
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/project/">Final Project</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/gallery/">Gallery of Final Projects<span aria-hidden="true" class="ps-2 text-decoration-none"><img draggable="false" class="emoji" alt="🖼️" src="./Problem Set 6 - CS50x 2026_files/1f5bc.png"> </span></a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/seminars/">Seminars</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+</li></ul>
+
+<!-- Items that might usually appear in an academic syllabus -->
+<hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/honesty/">Academic Honesty</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/certificate/">CS50 Certificate</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/faqs/">FAQs</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/staff/">Staff</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/syllabus/">Syllabus</a></li>
+</ul>
+
+<!-- Where to watch or take the class course -->
+<hr>
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://apps.apple.com/us/app/cs50/id1631064453">Apple TV</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+  </li><li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://play.google.com/store/apps/details?id=edu.harvard.cs50.googletv">Google TV</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://web.dce.harvard.edu/extension/csci/e/50">Harvard Extension School</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+  </li><li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://web.dce.harvard.edu/summer/csci/s/50">Harvard Summer School</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://channelstore.roku.com/details/e338f60adfb133abc19eac2da9e5c505:40cee2a1909355bc4496086c8fa4a86f/cs50">Roku <span class="badge ms-2 p-1 text-bg-warning">new</span></a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T380hlTqAU8HfvVepCcjCqTg6">YouTube</a></li>
+</ul>
+
+<!-- Manual page, style guide, other docs -->
+
+<hr>
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://manual.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<!-- Status Page -->
+<hr>
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<!-- Communities -->
+<hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/communities/"><strong>Communities</strong></a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://bsky.app/profile/cs50.harvard.edu">Bluesky</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.clubhouse.com/club/cs50">Clubhouse</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://discord.gg/cs50">Discord</a> <span class="badge bg-light ms-1 py-1 rounded-pill text-dark">Q&amp;A</span>
+</li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.edx.org/ed">Ed</a> <span class="badge bg-light ms-1 py-1 rounded-pill text-dark">Q&amp;A</span>
+</li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://www.facebook.com/groups/cs50/">Facebook Group</a> <span class="badge bg-light ms-1 py-1 rounded-pill text-dark">Q&amp;A</span>
+</li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://gitter.im/cs50/x">Gitter</a> <span class="badge bg-light ms-1 py-1 rounded-pill text-dark">Q&amp;A</span>
+</li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.medium.com/">Medium</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://www.reddit.com/r/cs50/">Reddit</a> <span class="badge bg-light ms-1 py-1 rounded-pill text-dark">Q&amp;A</span>
+</li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.edx.org/slack">Slack</a> <span class="badge bg-light ms-1 py-1 rounded-pill text-dark">Q&amp;A</span>
+</li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.stackexchange.com/">Stack Exchange</a> <span class="badge bg-light ms-1 py-1 rounded-pill text-dark">Q&amp;A</span>
+</li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://t.me/cs50x">Telegram</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.tiktok.com/@cs50">TikTok</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://www.threads.net/@cs50">Threads</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://x.com/cs50">X Account</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://x.com/i/communities/1722308663522594923">X Community</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<!-- Courses -->
+<hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x/courses/"><strong>Courses</strong></a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/x">CS50x</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/ai">CS50 AI</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="https://cs50.harvard.edu/cybersecurity">CS50 Cybersecurity</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://cs50.harvard.edu/law">CS50 for Lawyers</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://cs50.harvard.edu/python">CS50 Python</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://cs50.harvard.edu/r">CS50 R</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://cs50.harvard.edu/scratch">CS50 Scratch</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://cs50.harvard.edu/sql">CS50 SQL</a></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-square"></i></span><a href="http://cs50.harvard.edu/web">CS50 Web</a></li>
+</ul>
+
+<!-- Harvard Shop -->
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="./Problem Set 6 - CS50x 2026_files/shop.png" alt="Harvard Shop"></a></p>
+
+<!-- Legal -->
+<hr>
+
+<p><a href="https://cs50.harvard.edu/x/license/" class="small"><i class="fab fa-creative-commons me-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-lg" style="margin-bottom: 229px; margin-top: 0px;">
+
+                    <a data-id="" id="problem-set-6" style="top: 0px;"></a><h1><a data-id="" href="https://cs50.harvard.edu/x/psets/6/#problem-set-6">Problem Set 6</a></h1>
+
+<div class="alert alert-warning" data-alert="warning" role="alert">
+<p>Collaboration on problem sets is not permitted except to the extent that you may ask classmates and others for help so long as that help does not reduce to another doing your work for you, per the course’s policy on <a href="https://cs50.harvard.edu/x/syllabus/#academic-honesty" class="alert-link">academic honesty</a>.</p>
+
+<p>The staff conducts random audits of submissions to CS50x. Students found to be in violation of this policy will be removed from the course. Students who have already completed CS50x, if found to be in violation, will have their CS50 Certificate permanently revoked.</p>
+</div>
+
+<a data-id="" id="what-to-do" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/x/psets/6/#what-to-do">What to Do</a></h2>
+
+<ol>
+  <li>Log into <a href="https://cs50.dev/">cs50.dev</a> using your GitHub account</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">update50</code> in your codespace’s terminal window to ensure your codespace is up-to-date.</li>
+  <li>Submit <a href="https://cs50.harvard.edu/x/psets/6/hello/">Hello</a> in Python</li>
+  <li>Submit one of:
+    <ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/psets/6/mario/less/">this version of Mario</a> in Python, if feeling less comfortable</li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/psets/6/mario/more/">this version of Mario</a> in Python, if feeling more comfortable</li>
+    </ul>
+  </li>
+  <li>Submit one of:
+    <ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/psets/6/cash/">Cash</a> in Python, if feeling less comfortable</li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<a href="https://cs50.harvard.edu/x/psets/6/credit/">Credit</a> in Python, if feeling more comfortable</li>
+    </ul>
+  </li>
+  <li>Submit <a href="https://cs50.harvard.edu/x/psets/6/readability/">Readability</a> in Python</li>
+  <li>Submit <a href="https://cs50.harvard.edu/x/psets/6/dna/">DNA</a> in Python</li>
+</ol>
+
+<p>If you submit both versions of Mario, we’ll record the higher of your two scores. If you submit both Cash and Credit, we’ll record the higher of your two scores.</p>
+
+<a data-id="" id="when-to-do-it" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/x/psets/6/#when-to-do-it">When to Do It</a></h2>
+
+<p>By <a data-local="2026-06-30T23:59:00+00:00" href="https://time.cs50.io/20260630T235900Z">Tuesday, June 30, 2026 at 6:59 PM GMT-5</a>.</p>
+
+<a data-id="" id="advice" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/x/psets/6/#advice">Advice</a></h2>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Try out any of David’s programs from <a href="https://cs50.harvard.edu/x/weeks/6/">Week 6</a>.</li>
+</ul>
+
+<a data-id="" id="how-to-get-help" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/x/psets/6/#how-to-get-help">How to Get Help</a></h2>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Ask for help in the course’s <a href="https://cs50.harvard.edu/x/communities/">communities</a>!</li>
+</ul>
+
+<a data-id="" id="academic-honesty" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/x/psets/6/#academic-honesty">Academic Honesty</a></h2>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>For Hello, Mario, Cash, Credit, and Readability, it is <strong>reasonable</strong> to look at your own implementations thereof in C and others’ implementations thereof <em>in C</em>.</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>It is <strong>not reasonable</strong> to look at others’ implementations of the same <em>in Python</em>.</li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Insofar as a goal of these problems is to teach you how to teach yourself a new language, keep in mind that these acts are not only <strong>reasonable</strong>, per the syllabus, but encouraged toward that end:
+    <ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Incorporating a few lines of code that you find online or elsewhere into your own code, provided that those lines are not themselves solutions to assigned problems and that you cite the lines’ origins.</li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Turning to the web or elsewhere for instruction beyond the course’s own, for references, and for solutions to technical difficulties, but not for outright solutions to problem set’s problems or your own final project.</li>
+    </ul>
+  </li>
+</ul>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+        <script src="./Problem Set 6 - CS50x 2026_files/page.js.descarga"></script>
+
+    
+
+
+</body></html>
