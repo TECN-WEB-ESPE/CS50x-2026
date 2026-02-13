@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>My Webpage</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Homepage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">Sobre mi</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="site-header">
+        <div class="container hero">
+            <h1>Hola, soy Rayson</h1>
+            <p class="lead">Exploro HTML, CSS y JavaScript con proyectos pequenos y curiosos.</p>
+            <div class="cta-row">
+                <a class="btn btn-primary cta-button" href="projects.html">Ver proyectos</a>
+                <button class="btn btn-outline-light" id="quote-button" type="button">Nueva idea</button>
+            </div>
+            <p id="quote" class="quote">"Aprender creando es mas rapido."</p>
+        </div>
+    </header>
+
+    <main class="container section-spacing">
+        <section class="row">
+            <article class="col-md-6">
+                <h2>Lo que construyo</h2>
+                <p>Me enfoco en paginas limpias, accesibles y con pequenas interacciones que hacen la experiencia mas
+                    agradable.</p>
+                <ul class="tag-list">
+                    <li class="tag">Interfaces responsive</li>
+                    <li class="tag">Componentes Bootstrap</li>
+                    <li class="tag">Interaccion con JavaScript</li>
+                </ul>
+            </article>
+            <article class="col-md-6">
+                <h2>En esta web</h2>
+                <p>Encontraras un resumen de mi perfil, algunos proyectos y un formulario de contacto sencillo.</p>
+                <a class="btn btn-secondary" href="about.html">Conoce mas</a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Hecho para CS50. Navega libremente por todas las secciones.</p>
+        </div>
+    </footer>
+
+    <script>
+        const ideas = [
+            '"Aprender creando es mas rapido."',
+            '"Cada boton puede contar una historia."',
+            '"Menos codigo, mas claridad."'
+        ];
+        const quoteButton = document.querySelector('#quote-button');
+        const quote = document.querySelector('#quote');
+        let ideaIndex = 0;
+
+        quoteButton.addEventListener('click', () => {
+            ideaIndex = (ideaIndex + 1) % ideas.length;
+            quote.textContent = ideas[ideaIndex];
+        });
+    </script>
+</body>
+
+</html>
